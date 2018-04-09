@@ -11,7 +11,7 @@ if [ ! -d "$1" ]; then
 	exit 1
 fi
 
-perm=$(ls -ld /mnt/key/bkp | cut -d' ' -f1)
+perm=$(ls -ld "$1" | cut -d' ' -f1)
 
 if [[ $perm =~ ^drw[.]{7} ]]; then
 	echo "Can't write in the folder $1"
